@@ -1,0 +1,25 @@
+h1,h2 {
+  text-align:center;  
+} 
+
+
+/* link style */
+
+a {
+   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  color:#428bca;
+  text-decoration:underline;
+}
+
+a:active,a:hover {
+  outline:0 none;
+}
+a:hover,a:focus {
+  color:#2a6496;
+  text-decoration:underline;
+}
+a:focus {
+  outline: thin dotted;
+  outline-offset:-2px;
+}
+
