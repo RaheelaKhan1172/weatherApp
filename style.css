@@ -2,11 +2,28 @@ h1,h2 {
   text-align:center;  
 } 
 body {
-  background-color:black;
+}
+
+.clearDay {
+
 
 }
-#icon-4 {
-  border-radius: 150px;
+
+.rainyDay {
+
+
+}
+
+.cloudyDay {
+
+
+}
+
+.clearNight {
+
+}
+
+.cloudyNight {
 
 }
 /* link style */

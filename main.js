@@ -6,20 +6,38 @@ var weather = {
   currIcon:[], 
   days: ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
 }
+
 weather.fixIcon = function() {
   var i = 0;
-    console.log(weather.currIcon.length);
+    console.log(weather.currIcon.length,weather.currIcon);
   while (i < weather.currIcon.length) {
+    console.log('ji',document.getElementById("icon-"+i),weather.currIcon[i]);
+    console.log(weather.currIcon[i]);
     switch(weather.currIcon[i]) {
       case "Clear":
-        var end = document.getElementById("time-"+i).textContent;
-        if (end.includes('PM') && Number(end[0,1]) >= 6 || end.includes('AM') && Number(end[0,1]) < 4 || Number(end[0,1]) === 12) {
-          document.getElementById("icon-"+i).src="clearnight.jpg";
-        } else {
-          document.getElementById("icon-"+i).src ="Untitled.jpg";
+        if (document.getElementById("time-"+i) !== null) {
+          var end = document.getElementById("time-"+i).textContent 
         }
-
-
+        if (end.includes('PM') && Number(end[0,1]) >= 6 || end.includes('AM') && Number(end[0,1]) < 4 || Number(end[0,1]) === 12) {
+          document.getElementById("icon-"+i).src="night.jpg";
+        } else {
+          document.getElementById("icon-"+i).src = "Untitled.jpg"; 
+        }
+      break;
+      case "Rain":
+        document.getElementById("icon-"+i).src="rain.jpg";
+      break;
+      case "Clouds":
+        if (document.getElementById("time-"+i) !== null) {
+          var end = document.getElementById("time-"+i).textContent
+        }
+        if (end.includes('PM') && Number(end[0,1]) >= 6 || end.includes('AM') && Number(end[0,1]) < 4 || Number(end[0,1]) === 12) {
+          document.getElementById("icon-"+i).src="nightcloud.jpg";
+        } else {
+          console.log('ji',document.getElementById("icon-"+i),weather.currIcon[i-1]);
+          document.getElementById("icon-"+i).src = "cloud.jpg";
+        } 
+        break;
     }
   
   i++;
@@ -32,11 +50,12 @@ weather.fixDisplay = function() {
   $(".weatherDes").text(weather.currDes);
   $("#date").text(weather.days[currD.getDay()]);
   if (currD.getDay()+1 >= 7 || currD.getDay()+2 >= 7) {
-    console.log('hi');
-   var num = currD.getDay()+1 % weather.days.length;
+    console.log('hi',currD.getDay());
+   var num = (currD.getDay()+1) % weather.days.length;
    var num2 = (currD.getDay()+2) % weather.days.length;
    $("#nextday").text(weather.days[num]);
    $("#dayafter").text(weather.days[num2]);
+    console.log(num,num2,weather.days[num],weather.days[num2]);
     console.log(num2);
   } else {
     console.log('well');
@@ -57,6 +76,7 @@ weather.fixTemp = function() {
   });
     console.log(weather.nextTemp);
   for (var i = 0; i < nextDay.length; i++) {
+    
     document.getElementById('next-day-'+i).textContent = nextDay[i] + String.fromCharCode(176);
   }
     $("#currWeat").text(temp.shift());
@@ -100,14 +120,12 @@ weather.renderResponse = function(data) {
           weather.currDes = (data.list[i].weather[0].description); 
       }
     }
-    console.log(weather.currIcon);
     for (var i = 8; i < 20; i++){ 
       var date = data.list[i].dt_txt;
       date = date.split('-')[2].slice(0,2);
-      console.log(date,'date',next);
-      if (toCompare+2 === Number(date)&& next !== Number(date) && weather.nextTemp.indexOf(data.list[i].main.temp_max) === -1) {
+      
+      if (toCompare+1 === Number(date)&& next !== Number(date) && weather.nextTemp.indexOf(data.list[i].main.temp_max) === -1) {
         weather.nextTemp.push(data.list[i].main.temp_max);
-                console.log(toCompare,'hi',next,date);
         weather.currIcon.push(data.list[i].weather[0].main);
         next = Number(date);
         console.log(toCompare,'hi',next,date);
