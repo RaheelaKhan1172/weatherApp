@@ -1,8 +1,14 @@
 h1,h2 {
   text-align:center;  
 } 
+body {
+  background-color:black;
 
+}
+#icon-4 {
+  border-radius: 150px;
 
+}
 /* link style */
 
 a {
