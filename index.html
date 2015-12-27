@@ -10,15 +10,16 @@
   </head>
   <body>
     <section id="main" class="section-style">
+      <div class="bgimage"></div>
       <div class="container">
-        <div class="bgimage">
         <h1 class="title"> Weather</h1>
         <h2 class="weather-title"> Local Weather Forecast for <span id="city"></span></h2>
         <div id="weather-containers" class="wcontainer">
           <div class="row">
-          <div class="weatherDes">description goes ehre</div>
-          <div id="currWeat"> curr weather goes here</div>
+          <div class="weatherDes"></div>
+          <div id="currWeat"> </div>
           <div id="date"></div>
+          <div class="row line"></div>
           <div  class="col-sm-2 col-xs-2"><span id="time-0"></span>
             <div class="icon"><img id="icon-0"src=""></img></div>
             <div  class="temp" span id="day-0"></div>
@@ -38,15 +39,15 @@
           </div>
         </div>
         </div>
-         <div class="line"></div>
-         <div class="row">
-        <div class="col-sm-4 col-xs-4 nextDay"><span id="nextday"></span><img id="icon-5"src=""></img><span id="next-day-0"></span></div>
+         <div class="row text-center">
+         <div class="row line"></div>
+        <div class="col-md-12  nextDay"><span id="nextday"></span><img id="icon-5"src=""></img><span id="next-day-0"></span></div>
        </div>
-         <div class="row">
-          <div class="col-sm-4 col-xs-4 nextDay2"><span id="dayafter"></span><img id="icon-6"src=""></img><span id="next-day-1"></span></div>
+         <div class="row text-center">
+          <div class="col-md-12 nextDay2"><span id="dayafter"></span><img id="icon-6"src=""></img><span id="next-day-1"></span></div>
          </div>
-        </div>
       </div>
+    </div>
     </section>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script defer src="main.js"></script>

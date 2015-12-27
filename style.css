@@ -1,30 +1,100 @@
+@import url(https://fonts.googleapis.com/css?family=Cookie);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+h1 {
+  font-family: 'Cookie', cursive;
+}
+
 h1,h2 {
   text-align:center;  
 } 
+h2 {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
 body {
+  background:  no-repeat fixed center top/cover;
 }
-
-.clearDay {
-
-
-}
-
-.rainyDay {
-
+.weatherDes {
+  text-align:center;
+    font-family: 'Open Sans Condensed', sans-serif;
 
 }
-
-.cloudyDay {
-
+#currWeat {
+  text-align:center;
+    font-family: 'Open Sans Condensed', sans-serif;
+  font-weight:bold;
+  font-size:30px;
+}
+#date {
+  text-align:center;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+#nextday {
+      font-family: 'Open Sans Condensed', sans-serif;
+}
+#dayafter {
+      font-family: 'Open Sans Condensed', sans-serif;
+}
+.temp {
+    font-family: 'Open Sans Condensed', sans-serif;
 
 }
-
-.clearNight {
+.col-sm-2 {
+  margin:4px;
+  padding:20px;
+    font-family: 'Open Sans Condensed', sans-serif;
 
 }
+.row .line {
+  background-color:white;
+  opacity:0.6;
+  height:2px;
+  width:350px;
+  margin-left:400px;
+  border-radius:160px;
+  box-shadow: 2px 2px 1em white;
+}
+.icon {
+  position:center;
+}
+#icon-0 {
 
-.cloudyNight {
+  width:35px;
+}
 
+#icon-1 {
+
+  width:35px;
+}
+#icon-2 {
+
+  width:35px;
+}
+#icon-3 {
+
+  width:35px;
+}
+#icon-4 {
+
+  width:35px;
+}
+#icon-5 {
+
+  width:35px;
+}
+#icon-6 {
+
+  width:35px;
+}
+
+.col-sm-4 {
+  margin:35x;
+  padding:9px;
+}
+#icon-5 {
+  margin:10px;
+}
+#icon-6 {
+  margin:10px;
 }
 /* link style */
 
@@ -37,10 +107,12 @@ a {
 a:active,a:hover {
   outline:0 none;
 }
+
 a:hover,a:focus {
   color:#2a6496;
   text-decoration:underline;
 }
+
 a:focus {
   outline: thin dotted;
   outline-offset:-2px;
